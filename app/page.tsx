@@ -22,7 +22,7 @@ export default function MetroLineTestPage() {
     { startX: 0.27, endX: 0.44 },
   ];
   const startYs = [0.55, 0.70];
-  const iconSize = `1.6875rem`;
+  const iconSize = `${dimensions.height * 0.030}px`;
   const sharedDashedProps = {
     colors: ['#71B432', '#0091D1', '#CCB502'],
     minDashWidth: 4,
@@ -36,7 +36,7 @@ export default function MetroLineTestPage() {
   const actions = [
     {
       icon: (
-        <img src="./send.svg" alt="Send Icon" style={{ width: `1.47619rem`, height: `1.47656rem` }} />
+        <img src="./send.svg" alt="Send Icon" style={{ width: iconSize, height: iconSize }} />
       ),
       label: 'Send Message',
       borderColor: '#755D95;',
@@ -69,19 +69,19 @@ export default function MetroLineTestPage() {
 
       <div style={{
         position: 'absolute',
-        top: '62.5%',
-        left: '49%',
+        top: `${dimensions.height * 0.625}px`,
+        left: `${dimensions.width * 0.44}px`,
         transform: 'translate(-50%, -50%)',
         display: 'flex',
         zIndex: 10,
         flexDirection: 'column',
-        gap: '4.25rem',
+        gap: `${dimensions.height * 0.1}px`,
       }}>
         {actions.map(({ icon, label, borderColor, route }) => (
-          <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '3.5rem' }}>
+          <div key={label} style={{ display: 'flex', alignItems: 'center', gap: `${dimensions.height * 0.075}px` }}>
             <div style={{
-              width: '2.625rem',
-              height: '2.625rem',
+              width: `${dimensions.height * 0.05}px`,
+              height: `${dimensions.height * 0.05}px`,
               aspectRatio: '1/1',
               borderRadius: '50%',
               border: `3px solid ${borderColor}`,
@@ -100,7 +100,7 @@ export default function MetroLineTestPage() {
                 color: 'white',
                 border: 'none',
                 borderRadius: '0.375rem',
-                padding: '0.375rem 1.25rem',
+                padding: `${dimensions.height * 0.01}px ${dimensions.height * 0.01}px`,
                 fontSize: '1rem',
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -108,7 +108,7 @@ export default function MetroLineTestPage() {
                 display: 'inline-flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: '0.625rem',
+                gap: `${dimensions.height * 0.085}px`,
               }}>
               {label}
             </button>
