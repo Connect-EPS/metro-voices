@@ -6,6 +6,20 @@ import { useRouter } from "next/navigation";
 export default function SendPage() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const router = useRouter();
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async () => {
+  if (!message.trim()) return;
+
+  await fetch("/api/messages", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ content: message }),
+  });
+
+  setMessage("");
+  router.push("/");
+};
 
   useEffect(() => {
     const handleResize = () => {
@@ -130,6 +144,8 @@ export default function SendPage() {
             </label>
 
             <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               placeholder="Type your message..."
               style={{
                 background: "#fff",
@@ -147,6 +163,7 @@ export default function SendPage() {
 
             {/* LEFT-ALIGNED BUTTON */}
             <button
+              onClick={handleSubmit}
               style={{
                 marginTop: "1.5rem",
                 alignSelf: "flex-start", // 👈 left aligned

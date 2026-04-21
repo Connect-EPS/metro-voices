@@ -6,12 +6,16 @@ import { useRouter } from "next/navigation";
 export default function ReadPage() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const router = useRouter();
+  const [message, setMessage] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
       setDimensions({ width: window.innerWidth, height: window.innerHeight });
     };
     handleResize();
+    fetch("/api/messages")
+    .then((res) => res.json())
+    .then((data) => setMessage(data));
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -100,14 +104,14 @@ export default function ReadPage() {
             flex: 1,
             display: "flex",
             justifyContent: "center",
-            alignItems: "center", // 👈 more centered vertically
+            alignItems: "center",
           }}
         >
           <div
             style={{
               position: "relative",
               width: "100%",
-              maxWidth: "340px", // 👈 smaller card
+              maxWidth: "340px",
             }}
           >
             {/* TOP QUOTE (outline style) */}
@@ -174,7 +178,8 @@ export default function ReadPage() {
                     margin: 0,
                   }}
                 >
-                  Everyday is a new opportunity to change your life.
+                  {message ? message.content : "No messages yet."}
+
                 </p>
               </div>
             </div>
