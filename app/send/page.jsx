@@ -10,27 +10,27 @@ export default function SendPage() {
   const [message, setMessage] = useState("");
 
   const handleSubmit = async () => {
-  if (!message.trim()) return;
+    if (!message.trim()) return;
 
-  try {
-    const response = await fetch("/api/messages", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content: message }),
-    });
+    try {
+      const response = await fetch("/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ content: message }),
+      });
 
-    if (!response.ok) {
-      const data = await response.json();
-      setError(data.error || "Something went wrong");
-      return;
+      if (!response.ok) {
+        const data = await response.json();
+        setError(data.error || "Something went wrong");
+        return;
+      }
+
+      setMessage("");
+      router.push("/");
+    } catch (e) {
+      setError("Could not connect to server");
     }
-
-    setMessage("");
-    router.push("/");
-  } catch (e) {
-    setError("Could not connect to server");
-  }
-};
+  };
 
   useEffect(() => {
     const handleResize = () => {
