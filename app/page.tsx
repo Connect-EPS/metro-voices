@@ -17,7 +17,7 @@ export default function MetroLineTestPage() {
 
   // --- SYMMETRICAL CONFIGURATION ---
   const iconX = 0.12;
-  const buttonGap = 0.12;
+  const buttonGap = 0.175;
   const lineColors = ["#71B432", "#0091D1", "#CCB502"];
 
   const actions = [
@@ -87,7 +87,7 @@ export default function MetroLineTestPage() {
           {/* Segment B: Icon Center to Button Start */}
           <DashedGradientLine
             start={{ x: iconX, y: action.y }}
-            end={{ x: iconX + buttonGap, y: 0 }}
+            end={{ x: iconX + buttonGap + 0.025, y: 0 }}
             {...sharedDashedProps}
           />
         </div>
