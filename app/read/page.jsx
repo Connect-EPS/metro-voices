@@ -10,7 +10,6 @@ export default function ReadPage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-
   useEffect(() => {
     const handleResize = () => {
       setDimensions({ width: window.innerWidth, height: window.innerHeight });
@@ -19,14 +18,14 @@ export default function ReadPage() {
     fetch("/api/messages")
       .then((res) => res.json())
       .then((data) => {
-      if (data?.error) {
-        setError(data.error);
-    } else {
-      setMessage(data);
-    }
-  })
-  .catch(() => setError("Could not connect to server"))
-  .finally(() => setLoading(false));
+        if (data?.error) {
+          setError(data.error);
+        } else {
+          setMessage(data);
+        }
+      })
+      .catch(() => setError("Could not connect to server"))
+      .finally(() => setLoading(false));
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -119,6 +118,18 @@ export default function ReadPage() {
             alignItems: "center",
           }}
         >
+          <p
+            style={{
+              textAlign: "center",
+              color: "#444",
+              fontFamily: "Geologica, sans-serif",
+              fontSize: "1rem",
+              fontStyle: "italic",
+              marginBottom: "1.5rem",
+            }}
+          >
+            A message left for you by someone
+          </p>
           <div
             style={{
               position: "relative",
@@ -192,9 +203,9 @@ export default function ReadPage() {
                 >
                   {loading && "Loading..."}
                   {error && error}
-                  {!loading && !error && (message ? message.content : "No messages yet.")}
-
-
+                  {!loading &&
+                    !error &&
+                    (message ? message.content : "No messages yet.")}
                 </p>
               </div>
             </div>

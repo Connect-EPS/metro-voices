@@ -144,6 +144,19 @@ export default function SendPage() {
               gap: "0.75rem",
             }}
           >
+            <p
+              style={{
+              color: "#444",
+              fontFamily: "Geologica, sans-serif",
+              fontSize: "1rem",
+              margin: 0,
+              marginBottom: "0.5rem",
+              fontStyle: "italic",
+            }}
+          >
+            Tell someone about something you learned that positively changed your life
+          </p>
+
             <label
               style={{
                 color: "#000",
