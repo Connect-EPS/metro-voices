@@ -82,7 +82,7 @@ export default function SendPage() {
           flexDirection: "column",
         }}
       >
-        {/* HEADER (back to top) */}
+        {/* HEADER */}
         <div
           style={{
             width: "100%",
@@ -90,9 +90,9 @@ export default function SendPage() {
             margin: "0 auto",
             display: "flex",
             alignItems: "center",
+            justifyContent: "center",
             position: "relative",
             marginBottom: "2rem",
-            marginTop: "3rem"
           }}
         >
           <button
@@ -100,30 +100,49 @@ export default function SendPage() {
             style={{
               position: "absolute",
               left: 0,
+              top: "-2px",
               background: "none",
               border: "none",
               cursor: "pointer",
               fontSize: "1.5rem",
-              color: "#666",
-              top: "-50px"
+              color: "#000",
             }}
           >
             ✕
           </button>
 
-          <h1
+          <div
             style={{
-              width: "100%",
-              textAlign: "center",
-              color: "#000",
-              fontFamily: "Geologica, sans-serif",
-              fontSize: "2rem",
-              fontWeight: 400,
-              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "1.5rem",
             }}
           >
-            Send Message
-          </h1>
+            <h1
+              style={{
+                fontFamily: "Geologica, sans-serif",
+                fontSize: "1.8rem",
+                fontWeight: 400,
+                margin: 0,
+                color: "#000",
+              }}
+            >
+              Send Message
+            </h1>
+            <p
+              style={{
+                fontFamily: "Geologica, sans-serif",
+                fontSize: "1rem",
+                fontStyle: "italic",
+                color: "#444",
+                margin: 0,
+              }}
+            >
+              Tell someone about something you learned that positively changed
+              your life
+            </p>
+          </div>
         </div>
 
         {/* CENTERED INPUT AREA */}
@@ -144,19 +163,6 @@ export default function SendPage() {
               gap: "0.75rem",
             }}
           >
-            <p
-              style={{
-              color: "#444",
-              fontFamily: "Geologica, sans-serif",
-              fontSize: "1rem",
-              margin: 0,
-              marginBottom: "0.5rem",
-              fontStyle: "italic",
-            }}
-          >
-            Tell someone about something you learned that positively changed your life
-          </p>
-
             <label
               style={{
                 color: "#000",
@@ -186,7 +192,14 @@ export default function SendPage() {
             />
 
             {error && (
-              <p style={{ color: "red", fontFamily: "Geologica, sans-serif", fontSize: "0.9rem", margin: 0 }}>
+              <p
+                style={{
+                  color: "red",
+                  fontFamily: "Geologica, sans-serif",
+                  fontSize: "0.9rem",
+                  margin: 0,
+                }}
+              >
                 {error}
               </p>
             )}

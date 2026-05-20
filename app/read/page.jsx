@@ -96,17 +96,38 @@ export default function ReadPage() {
             ✕
           </button>
 
-          <h1
+          <div
             style={{
-              fontFamily: "Geologica, sans-serif",
-              fontSize: "1.8rem",
-              fontWeight: 400,
-              margin: 0,
-              color: "#000",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "1.5rem",
             }}
           >
-            Read Message
-          </h1>
+            <h1
+              style={{
+                fontFamily: "Geologica, sans-serif",
+                fontSize: "1.8rem",
+                fontWeight: 400,
+                margin: 0,
+                color: "#000",
+              }}
+            >
+              Read Message
+            </h1>
+            <p
+              style={{
+                fontFamily: "Geologica, sans-serif",
+                fontSize: "1rem",
+                fontStyle: "italic",
+                color: "#444",
+                margin: 0,
+              }}
+            >
+              Someone shared something they learned that positively changed
+              their life
+            </p>
+          </div>
         </div>
 
         {/* CARD AREA */}
@@ -118,18 +139,6 @@ export default function ReadPage() {
             alignItems: "center",
           }}
         >
-          <p
-            style={{
-              textAlign: "center",
-              color: "#444",
-              fontFamily: "Geologica, sans-serif",
-              fontSize: "1rem",
-              fontStyle: "italic",
-              marginBottom: "1.5rem",
-            }}
-          >
-            A message left for you by someone
-          </p>
           <div
             style={{
               position: "relative",
