@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import MetroLine from "./components/metro-line";
 import DashedGradientLine from "./components/dashed-gradient-line";
 import { useState, useEffect } from "react";
@@ -53,17 +54,19 @@ export default function MetroLineTestPage() {
   };
 
   return (
-    <div style={{
-      width: dimensions.width,
-      height: dimensions.height,
-      position: "fixed", // Changed to fixed to ignore body margins
-      top: 0,            // Pinned to the very top edge
-      left: 0,           // Pinned to the very left edge
-      background: "#f0f0f0",
-      overflow: "hidden",
-      margin: 0,
-      padding: 0
-    }}>
+    <div
+      style={{
+        width: dimensions.width,
+        height: dimensions.height,
+        position: "fixed", // ignore body margins
+        top: 0, // Pinned to the top edge
+        left: 0, // Pinned to the left edge
+        background: "#f0f0f0",
+        overflow: "hidden",
+        margin: 0,
+        padding: 0,
+      }}
+    >
       {/* 1. Metro Line */}
       <MetroLine
         start={{ x: 0.0, y: 0.43 }}
@@ -113,7 +116,11 @@ export default function MetroLineTestPage() {
               zIndex: 30,
             }}
           >
-            <img src={action.icon} alt="" style={{ width: iconImgSize, height: iconImgSize }} />
+            <img
+              src={action.icon}
+              alt=""
+              style={{ width: iconImgSize, height: iconImgSize }}
+            />
           </div>
 
           {/* Button */}
@@ -137,7 +144,7 @@ export default function MetroLineTestPage() {
               whiteSpace: "nowrap",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
             }}
           >
             {action.label}
@@ -146,17 +153,29 @@ export default function MetroLineTestPage() {
       ))}
 
       {/* Logo */}
-      <img
-        src="./logo.png"
-        alt="Logo"
+      <div
         style={{
           position: "absolute",
-          top: "4rem",
+          top: "3rem",
           left: "50%",
           transform: "translateX(-50%)",
-          width: "40%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "0.75rem",
         }}
-      />
+      >
+        <img
+          src="./logo.png"
+          alt="Logo"
+          style={{ width: `${dimensions.width * 0.4}px` }}
+        />
+        <img
+          src="./nameOraBlu.png"
+          alt="Connect Share"
+          style={{ width: `${dimensions.width * 0.5}px` }}
+        />
+      </div>
     </div>
   );
 }
