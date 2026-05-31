@@ -2,7 +2,7 @@
 
 An anonymous message board where people share something they learned that positively changed their life — and read what others have shared.
 
-![Metro Voices home screen](./public/screenshot.png)
+<img src="./public/screenshot.png" alt="Metro Voices home screen" width="400">
 
 ## Features
 
