@@ -39,7 +39,7 @@ export default function MetroLineTestPage() {
   ];
 
   // --- EQUAL HEIGHTS CONFIGURATION ---
-  const itemHeight = dimensions.height * 0.06;
+  const itemHeight = dimensions.height * 0.05;
   const iconImgSize = `${itemHeight * 0.55}px`;
 
   const sharedDashedProps = {

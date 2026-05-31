@@ -152,7 +152,7 @@ export default function ReadPage() {
                 position: "absolute",
                 top: "-10px",
                 left: "10px",
-                fontSize: "3.5rem",
+                fontSize: "5rem",
                 color: "transparent",
                 WebkitTextStroke: "2px #050756",
                 fontFamily: "serif",
@@ -178,6 +178,7 @@ export default function ReadPage() {
               }}
             >
               {/* BIG SOFT CIRCLE */}
+              {/* circle 1*/}
               <div
                 style={{
                   position: "absolute",
@@ -189,10 +190,23 @@ export default function ReadPage() {
                   background: "rgba(255,255,255,0.25)",
                 }}
               />
+              {/* Circle 2*/}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "-20px",
+                  right: "-20px",
+                  width: "130px",
+                  height: "130px",
+                  borderRadius: "50%",
+                  background: "rgba(210,160,140,0.4)",
+                }}
+              />
 
               <div style={{ zIndex: 2 }}>
                 <h2
                   style={{
+                    color: "#000",
                     fontFamily: "Geologica, sans-serif",
                     fontSize: "0.9rem",
                     fontWeight: 700,
@@ -204,6 +218,7 @@ export default function ReadPage() {
 
                 <p
                   style={{
+                    color: "#000",
                     fontFamily: "Geologica, sans-serif",
                     fontSize: "0.95rem",
                     lineHeight: "1.5",
@@ -225,7 +240,7 @@ export default function ReadPage() {
                 position: "absolute",
                 bottom: "-20px",
                 right: "10px",
-                fontSize: "3.5rem",
+                fontSize: "5rem",
                 color: "transparent",
                 WebkitTextStroke: "2px #050756",
                 fontFamily: "serif",
